@@ -13,21 +13,22 @@ import android.view.ViewGroup
 abstract class BaseAdapter : RecyclerView.Adapter<BaseViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): BaseViewHolder {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         return BaseViewHolder(LayoutInflater.from(parent!!.getContext()).inflate(viewType, parent, false))
     }
 
     override fun onBindViewHolder(holder: BaseViewHolder?, position: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         if (clickable()) {
             holder!!.getConvertView().setClickable(true)
             holder.getConvertView().setOnClickListener(View.OnClickListener { v ->
                 onItemClick(v, position)
             })
         }
+
+        findView(holder!!)
         onBindView(holder!!, holder.getLayoutPosition())
     }
 
+    abstract fun findView(holder: BaseViewHolder)
     abstract fun onBindView(holder: BaseViewHolder, position: Int)
 
 

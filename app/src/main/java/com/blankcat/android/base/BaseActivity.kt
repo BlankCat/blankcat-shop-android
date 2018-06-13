@@ -14,7 +14,7 @@ import android.util.Log
 import android.view.KeyEvent
 import android.view.WindowManager
 import butterknife.ButterKnife
-import com.blankcat.android.MainActivity
+import com.blankcat.android.ui.main.MainActivity
 import com.blankcat.android.R
 import com.blankcat.android.constant.AppConstants
 import com.blankcat.android.utils.AppStatusTrackerUtils
@@ -77,15 +77,16 @@ import com.blankcat.android.utils.StatusBarCompatUtils
     }
 
     private  fun init(){
-        setListener()
         initPresenter()
         initViews()
+        setListener()
         initData()
     }
     abstract fun getLayoutId():Int
+    abstract fun initPresenter()
     abstract fun initViews()
     abstract fun setListener()
-    abstract fun initPresenter()
+
     abstract fun initData()
 
     override fun onResume() {
@@ -108,26 +109,26 @@ import com.blankcat.android.utils.StatusBarCompatUtils
     }
 
 
-    lateinit var  loadingDialog:AlertDialog
-    fun showLoadingDialog():AlertDialog {
+     var  loadingDialog:AlertDialog?=null
+    fun showLoadingDialog():AlertDialog? {
         loadingDialog =  AlertDialog.Builder(this).create()
-        loadingDialog.getWindow().setBackgroundDrawable( ColorDrawable())
-        loadingDialog.setCancelable(false)
-        loadingDialog.setOnKeyListener(DialogInterface.OnKeyListener { v, keyCode, event ->
+        loadingDialog!!.getWindow().setBackgroundDrawable( ColorDrawable())
+        loadingDialog!!.setCancelable(false)
+        loadingDialog!!.setOnKeyListener(DialogInterface.OnKeyListener { v, keyCode, event ->
             Log.e("tag", "keyCode$keyCode, ${event.keyCode}")
             if (keyCode == KeyEvent.KEYCODE_SEARCH || keyCode == KeyEvent.KEYCODE_BACK)
                 return@OnKeyListener true
             return@OnKeyListener false
         })
-        loadingDialog.show()
-        loadingDialog.setContentView(R.layout.dialog_loadding)
-        loadingDialog.setCanceledOnTouchOutside(false)
+        loadingDialog!!.show()
+        loadingDialog!!.setContentView(R.layout.dialog_loadding)
+        loadingDialog!!.setCanceledOnTouchOutside(false)
         return loadingDialog
     }
 
     fun dismissLoadingDialog() {
-        if (null != loadingDialog && loadingDialog.isShowing()) {
-            loadingDialog.dismiss()
+        if (null != loadingDialog && loadingDialog!!.isShowing()) {
+            loadingDialog!!.dismiss()
         }
     }
 

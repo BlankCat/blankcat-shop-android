@@ -9,6 +9,7 @@ public object UrlConfig {
     /**
      * 用于写最基础的url，主要是用于生产环境和开发环境替换
      */
-    const val BASE_URL = "http://10.2.3.208:18080/";
-
+    const val BASE_URL = "http://10.2.3.208:18080/"
+    const val BASE_URL_SECOND_LEVEL = "/xrtn-doctor/"
+    const val HOME = BASE_URL_SECOND_LEVEL + "{version}/index/desktop.json"
 }

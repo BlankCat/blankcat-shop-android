@@ -3,6 +3,7 @@ package com.blankcat.android.common.network;
 import android.support.annotation.NonNull;
 
 import com.blankcat.android.base.BaseApp;
+import com.blankcat.android.bean.HomeBean;
 
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
@@ -16,6 +17,7 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import rx.Observable;
 
 import static com.blankcat.android.constant.UrlConfig.BASE_URL;
 
@@ -104,5 +106,12 @@ public class HttpHelper {
     }
 
 
+    /**
+     * 首页
+     * @return
+     */
+    public Observable<HomeBean> toHome(String time, String userId) {
+        return service.toHome("v" + BaseApp.VERSIONCODE, time, userId);
+    }
 
 }

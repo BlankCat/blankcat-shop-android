@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="white_color">#ffffff</color>
+    <color name="colorAccent">#D09B30</color>
+    <color name="title_color">#D09B30</color>
+    <color name="light_blue">#CAEAFF</color>
+    <color name="blue">#50B9FF</color>
+    <color name="bg_color">#F2F2F2</color>
+    <color name="text_blue">#5DAFE5</color>
+    <color name="lin_color">#e6e6e6</color>
+    <color name="text_gry_color">#787878</color>
+    <color name="text_back_color">#313131</color>
+    <color name="text_888_color">#888888</color>
+    <color name="yellow_coloe">#FFA080</color>
+    <color name="time_gry_color">#868484</color>
+    <color name="c8_color">#C8C8C8</color>
+    <color name="red">#F97272</color>
+
+    <color name="text_gray_53">#535353</color>
+    <color name="text_back_3d">#3D3D3D</color>
+    <color name="text_back_47">#474747</color>
+
+    <color name="fa_color">#fafafa</color>
+    <color name="me_blue_color">#90D2FF</color>
+    <color name="text_8a_color">#8a8a8a</color>
+    <color name="text_9b_color">#9b9b9b</color>
+
+
+    <!-- Calendar -->
+    <color name="calendar_month_text">#757575</color>
+    <color name="news_icon_background">#E3E3E3</color>
 </resources>

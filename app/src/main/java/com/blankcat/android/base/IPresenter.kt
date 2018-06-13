@@ -5,8 +5,6 @@ package com.blankcat.android.base
  * @Desc:
  */
  interface IPresenter<T:IView> {
-
-    fun  detachView()
-
     fun attachView( view:T)
+    fun  detachView()
 }
