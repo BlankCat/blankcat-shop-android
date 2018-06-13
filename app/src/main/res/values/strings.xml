@@ -1,3 +1,69 @@
 <resources>
     <string name="appname">BlankCat</string>
+        <string name="app_name_cn">捏积派</string>
+        <string name="app_name">捏积派</string>
+
+        <string name="login_title">捏积派大夫端</string>
+        <string name="order_list">预约列表</string>
+        <string name="base_info_list">基本信息调查表</string>
+        <string name="detail_info">详情</string>
+        <string name="patient_pic">患者头像</string>
+        <string name="my">我的</string>
+
+        <string name="user">用户名</string>
+        <string name="password">密码</string>
+        <string name="personal_performance">个人业绩</string>
+        <string name="statistics">统计</string>
+        <string name="Performance_drawing">业绩提成</string>
+        <string name="Days_of_attendance">出勤天数</string>
+        <string name="Days_of_rest">休息天数</string>
+
+        <string name="select_Drugs">选择商品</string>
+        <string name="add_Drugs">+  添加商品</string>
+
+
+        <string name="user_signature">像蜜蜂一样勤劳的工作，才能享受甜蜜的生活</string>
+        <string name="user_name">暂无预约</string>
+        <string name="regular_members">普通会员</string>
+        <string name="today_score">今日业绩</string>
+        <string name="detail">明细</string>
+
+        <string name="my_score">我的业绩</string>
+        <string name="leave_manager">请假管理</string>
+        <string name="my_order">我的订单</string>
+        <string name="check_update">检查更新</string>
+        <string name="logout">退出登录</string>
+        <!-- TODO: Remove or change this placeholder text -->
+        <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+        <string name="set_str">设置</string>
+
+        <!-- Calendar -->
+        <string name="sunday_text">周日</string>
+        <string name="monday_text">周一</string>
+        <string name="tuesday_text">周二</string>
+        <string name="wednesday_text">周三</string>
+        <string name="thursday_text">周四</string>
+        <string name="friday_text">周五</string>
+        <string name="saturday_text">周六</string>
+        <string name="no_events">No events</string>
+
+        <string name="invalid_attribute">Failed to create Calendar,\n\n invalid value of Attributes!,\n Please review &amp; try again!</string>
+        <string name="invalid_count">Failed to create Calendar,\n\n invalid eventCount,\n Please enter between 1 to 3</string>
+
+        <string name="alert_dialog_ok">OK</string>
+        <string name="alert_dialog_cancel">Cancel</string>
+
+        <string name="storage_description_title">你能允许存储权限吗?</string>
+        <string name="location_cameal_title">你能允许相机权限吗?</string>
+        <string name="location_description_permission">你好,需要获取相机权限。你能允许吗?</string>
+
+        <string name="sun">日</string>
+        <string name="mon">一</string>
+        <string name="tue">二</string>
+        <string name="wed">三</string>
+        <string name="thu">四</string>
+        <string name="fri">五</string>
+        <string name="sat">六</string>
 </resources>

@@ -4,9 +4,11 @@ import android.support.annotation.NonNull;
 
 import com.blankcat.android.base.BaseApp;
 import com.blankcat.android.bean.HomeBean;
+import com.blankcat.android.bean.UserMessageBean;
 
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.HostnameVerifier;
@@ -105,13 +107,14 @@ public class HttpHelper {
         return retrofit;
     }
 
-
-    /**
-     * 首页
-     * @return
-     */
+    /**首页*/
     public Observable<HomeBean> toHome(String time, String userId) {
         return service.toHome("v" + BaseApp.VERSIONCODE, time, userId);
+    }
+
+    /**个人中心*/
+    public Observable<UserMessageBean> toUserInfoMessage(HashMap<String, String> map) {
+        return service.toUserInfoMessage("v" + BaseApp.VERSIONCODE, map);
     }
 
 }

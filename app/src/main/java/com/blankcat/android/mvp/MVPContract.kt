@@ -5,7 +5,9 @@ import com.blankcat.android.base.IModle
 import com.blankcat.android.base.IPresenter
 import com.blankcat.android.base.IView
 import com.blankcat.android.bean.HomeBean
+import com.blankcat.android.bean.UserMessageBean
 import rx.Subscriber
+import java.util.HashMap
 
 /**
  * @author: zjf
@@ -27,6 +29,20 @@ class MVPContract {
         fun loadHome(context: Context, time:String, userId:String)
     }
 
+    /**
+     * 个人中心
+     */
+    interface IUserInfoMessageView : IView {
+        fun onUserInfoMessageSuccess( userMessageBean: UserMessageBean)
+        fun onFailed( msg:String)
+    }
+    interface IUserInfoMessageModel : IModle {
+        fun toUserInfoMessage( subscriber:Subscriber<UserMessageBean>,  map: HashMap<String, String>)
+
+    }
+    interface IUserInfoMessagePresenter : IPresenter<IUserInfoMessageView> {
+        fun loadUserInfoMessage( context:Context,  map: HashMap<String, String>)
+    }
 
 
 

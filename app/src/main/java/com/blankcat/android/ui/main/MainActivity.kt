@@ -1,9 +1,9 @@
-package com.blankcat.android.ui.main;
+package com.blankcat.android.ui.main
 
+import android.content.Intent
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.ViewUtils
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -15,6 +15,7 @@ import com.blankcat.android.constant.AppConstants
 import com.blankcat.android.customView.RoundImageView
 import com.blankcat.android.mvp.MVPContract
 import com.blankcat.android.mvp.presenter.HomePresenter
+import com.blankcat.android.ui.personalCenter.PersonalCenterActivity
 import com.blankcat.android.utils.HomeDataUtils
 import com.blankcat.android.utils.ImageUtils
 import com.blankcat.android.utils.SPUtils
@@ -35,22 +36,21 @@ class MainActivity : BaseActivity() ,
      lateinit var homeRl: RecyclerView
      lateinit var swipeRefreshLayout: SwipeRefreshLayout
 
-
     var homePresenter:MVPContract.IHomePresenter?=null
-     var mainAdapter:MainAdapter?=null
-     val datas = ArrayList<HomeBean.ResultsBean.BookingListBean>()
-     override fun getLayoutId(): Int {
+    var mainAdapter:MainAdapter?=null
+    val datas = ArrayList<HomeBean.ResultsBean.BookingListBean>()
+    override fun getLayoutId(): Int {
          return R.layout.activity_main
      }
 
-     override fun initPresenter() {
+    override fun initPresenter() {
          if (null == homePresenter) {
              homePresenter = HomePresenter()
              homePresenter!!.attachView(this)
          }
      }
 
-     override fun initViews() {
+    override fun initViews() {
          this.backIv = findViewById(R.id.back_iv)
          this.titleNameTv = findViewById(R.id.title_name_tv)
          this.headIv = findViewById(R.id.head_iv)
@@ -62,14 +62,13 @@ class MainActivity : BaseActivity() ,
          this.swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout)
      }
 
-
-     override fun setListener() {
+    override fun setListener() {
          backIv.setOnClickListener(this)
          timeTv.setOnClickListener(this)
          swipeRefreshLayout.setOnRefreshListener(this)
      }
 
-     override fun initData() {
+    override fun initData() {
 //         val userId = SPUtils.get(AppConstants.SP_USER_ID, -1) as Int
          swipeRefreshLayout.setColorSchemeResources(R.color.title_color, R.color.title_color, R.color.title_color)
 
@@ -89,10 +88,12 @@ class MainActivity : BaseActivity() ,
                 itemOnClick
         )
      }
+
     override fun onClick(v: View?) {
         when(v?.id){
             R.id.back_iv->{
-                Toast.makeText(this,"back",Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this,"back",Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, PersonalCenterActivity::class.java))
             }
             R.id.time_tv1->{
                 Toast.makeText(this,"time_tv1",Toast.LENGTH_SHORT).show()
@@ -121,9 +122,6 @@ class MainActivity : BaseActivity() ,
         storeNameTv.setText(userInfoBean.subclinicName)
     }
 
-    /**
-     * 下拉刷新
-     */
     override fun onRefresh() {
         if (null != loadingDialog) {
             dismissLoadingDialog()
@@ -144,13 +142,12 @@ class MainActivity : BaseActivity() ,
         loadingDialog = showLoadingDialog()
     }
 
-
     override fun hideLoadingDialog() {
         if (null != loadingDialog)
             dismissLoadingDialog()
     }
 
-     override fun onDestroy() {
+    override fun onDestroy() {
          super.onDestroy()
          if (null != homePresenter) {
              homePresenter!!.detachView()

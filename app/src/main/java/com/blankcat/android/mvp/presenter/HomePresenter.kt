@@ -37,7 +37,6 @@ class HomePresenter : IHomePresenter{
                 iHomeView.onFailed("网络异常")
                 iHomeView.hideLoadingDialog()
             }
-
             override fun onNext(homeBean: HomeBean?) {
                 if ("0" == homeBean!!.code as String) {
                     iHomeView.onSuccess(homeBean)

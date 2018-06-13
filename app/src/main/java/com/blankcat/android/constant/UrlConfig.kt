@@ -11,5 +11,8 @@ public object UrlConfig {
      */
     const val BASE_URL = "http://10.2.3.208:18080/"
     const val BASE_URL_SECOND_LEVEL = "/xrtn-doctor/"
+    /**主页*/
     const val HOME = BASE_URL_SECOND_LEVEL + "{version}/index/desktop.json"
+    /**个人中心*/
+    const val SELECTUSERINFO = BASE_URL_SECOND_LEVEL + "{version}/user/selectUserInfo.json"
 }
